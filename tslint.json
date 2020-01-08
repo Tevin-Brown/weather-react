@@ -1,0 +1,28 @@
+{
+  "extends": ["tslint:recommended", "tslint-config-prettier"],
+  "jsRules": true,
+  "rules": {
+    "interface-name": false,
+    "object-literal-sort-keys": false,
+    "ordered-imports": false,
+    "no-console": false,
+    "member-access": false,
+    "member-ordering": false,
+    "no-trailing-whitespace": true,
+    "whitespace": [true,
+      "check-branch",
+      "check-decl",
+      "check-operator",
+      "check-module",
+      "check-separator",
+      "check-rest-spread",
+      "check-type",
+      "check-typecast",
+      "check-type-operator",
+      "check-preblock",
+      "check-postbrace"]
+  },
+  "linterOptions": {
+    "exclude": ["**/assets/animations/*.json"]
+  }
+}
