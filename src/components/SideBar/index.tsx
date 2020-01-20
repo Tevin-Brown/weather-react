@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { css } from 'emotion';
 import { sideBarContainer } from './styles'
 
 const SideBar = () => {
