@@ -1,35 +1,33 @@
 import React, {useState} from 'react';
+import {css} from 'emotion';
 import {Switch, Route, BrowserRouter as Router} from 'react-router-dom';
-import SideBar from './components/SideBar';
-import TabIcon from './components/TabIcon';
-import Transition from './components/Transition';
+import NavigationBar from './components/NavigationBar';
 import Home from './pages/Home';
-import {appContainer} from './components/SideBar/styles';
+import Footer from './components/Footer';
+
+const centeredContainer = css`
+  display: flex;
+  flex-flow: row wrap;
+  flex-direction: column;
+  width: 80vw;
+  background: #ffffff;
+  box-shadow: 0px 1px 10px 0px #888;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 25px;
+  margin: 25px auto;
+`;
+
+const appContainer = css`
+  background: #eeeeee;
+`;
 
 export const AppRouter: React.FC = () => {
-  const [closeNavigation, setCloseNavigation] = useState(true);
-  const navigationHandler = () => {
-    setCloseNavigation(!closeNavigation);
-  };
   return (
     <Router>
-      <div style={{overflow: 'hidden', display: 'flex'}}>
-        <Transition
-          trigger={closeNavigation}
-          styleOverrides={{width: '230px'}}
-          transitionOverrides={{transform: 'translateX(-200px)'}}
-        >
-          <TabIcon clickHandler={navigationHandler} />
-          <SideBar />
-        </Transition>
-        <Transition
-          trigger={closeNavigation}
-          styleOverrides={{marginLeft: '230px', width: 'calc(100vw - 230px)'}}
-          transitionOverrides={{
-            marginLeft: '30px',
-            width: 'calc(100vw - 30px)',
-          }}
-        >
+      <div className={appContainer}>
+        <NavigationBar />
+        <div className={centeredContainer}>
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/about">
@@ -45,7 +43,8 @@ export const AppRouter: React.FC = () => {
               <div>This page was not found</div>
             </Route>
           </Switch>
-        </Transition>
+        </div>
+        <Footer />
       </div>
     </Router>
   );

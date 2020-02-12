@@ -6,14 +6,15 @@ export const tabIcon = css`
   justify-content: center;
   min-width: 30px;
   min-height: 40px;
-  position: absolute;
+  position: fixed;
   top: 50px;
   left: 200px;
-  background-color: gray;
+  box-shadow: 5px 0 5px 0px #888;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+  background: #ffffff;
   &:hover {
     cursor: pointer;
   }
-  z-index: 1;
+  z-index: 2;
 `;
