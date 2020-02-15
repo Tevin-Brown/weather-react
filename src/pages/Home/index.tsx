@@ -1,38 +1,20 @@
 import React from 'react';
 import {css} from 'emotion';
-
-const green = css`
-  background: green;
-  width: 200px;
-  height: 250px;
-  margin: 10px;
-`;
-
-const red = css`
-  background: red;
-  width: 200px;
-  height: 250px;
-  margin: 10px;
+import Card from '../../components/Card';
+const centeredContainer = css`
+  display: flex;
+  flex-flow: row wrap;
+  flex-direction: column;
+  width: 80vw;
+  min-height: calc(100vh - 250px);
+  box-sizing: border-box;
+  margin: 25px auto;
 `;
 
 const Home: React.FC = () => {
   return (
-    <div
-      style={{
-        display: 'flex',
-        flexFlow: 'row wrap',
-        width: 'inherit',
-        justifyContent: 'center',
-      }}
-    >
-      <div className={green} />
-      <div className={red} />
-      <div className={green} />
-      <div className={red} />
-      <div className={green} />
-      <div className={red} />
-      <div className={green} />
-      <div className={red} />
+    <div className={centeredContainer}>
+      <Card>Home</Card>
     </div>
   );
 };

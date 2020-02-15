@@ -5,7 +5,7 @@ import {TRANSITION_DURATION} from '../../constants';
 const transitionBaseClass = css`
   display: flex;
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
   transition: all ${TRANSITION_DURATION}s;
 `;
 
