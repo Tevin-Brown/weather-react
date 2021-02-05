@@ -4,9 +4,23 @@ import {NavLink} from 'react-router-dom';
 
 const navigationLink = css`
   font-size: 16px;
+  align-self: flex-end;
   width: 100%;
   color: black;
+  text-align: right;
   text-decoration: none;
+  padding-right: 5px;
+`;
+
+const navigationLinkActive = css`
+  ${navigationLink};
+  border-right: 5px solid #3cacae;
+`;
+
+const navLinkWrapper = css`
+  display: flex;
+  height: 30px;
+  padding: 10px 0px;
   border-bottom: 1px solid #888;
 `;
 
@@ -22,12 +36,25 @@ const sideBarContainer = css`
 const SideBar = () => {
   return (
     <div className={sideBarContainer}>
-      <NavLink to="/satellite-imagery" className={navigationLink}>
-        Satellites
-      </NavLink>
-      <NavLink to="/satellite-imagery/WV" className={navigationLink}>
-        Water Vapor Imagery
-      </NavLink>
+      <div className={navLinkWrapper}>
+        <NavLink
+          exact
+          to="/satellite-imagery"
+          className={navigationLink}
+          activeClassName={navigationLinkActive}
+        >
+          Satellites
+        </NavLink>
+      </div>
+      <div className={navLinkWrapper}>
+        <NavLink
+          to="/satellite-imagery/WV"
+          className={navigationLink}
+          activeClassName={navigationLinkActive}
+        >
+          Water Vapor Imagery
+        </NavLink>
+      </div>
     </div>
   );
 };
